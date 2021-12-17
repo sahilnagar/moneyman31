@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mansi Beauty Parlour</title>
+
+
+</head>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+    /* CSS RESET */
+
+
+    body {
+        font-family: 'Baloo Bhaijaan 2', cursive;
+        margin-left: 0px;
+        padding: 0px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url('https://res.cloudinary.com/conferences-and-exhibitions-pvt-ltd/image/upload/v1605198265/News/Events/Nov-2020/12-Nov/Global_hair_beauty/Lead_image_yixuwz.jpg');
+        color: honeydew;
+    }
+
+    .left {
+
+        display: inline-block;
+        position: absolute;
+        left: 0px;
+        top: 2px;
+
+    }
+
+
+    .left img {
+        width: 110px;
+        border: 2px solid pink;
+    }
+
+    .left div {
+        font-family: cursive;
+        color: hotpink;
+    }
+
+
+
+
+
+
+
+
+    .mid {
+
+        display: block;
+        margin: -27px auto;
+        width: 35%;
+
+    }
+
+    .navbar {
+        display: inline-block;
+        background-color: black;
+        height: 20px;
+        padding: 18px;
+        border-radius: 15px;
+        position: fixed;
+        top: -18px;
+
+    }
+
+    .navbar li {
+        display: inline-block;
+        font-size: 20px;
+    }
+
+    .navbar li a {
+        color: white;
+        text-decoration: none;
+        padding: 34px 23px;
+
+    }
+
+    .navbar li a:hover {
+        color: skyblue;
+    }
+
+    .navbar li a.active {
+        text-decoration: underline;
+        color: chartreuse;
+    }
+
+
+
+
+
+    .right {
+
+        display: inline-block;
+        position: absolute;
+        right: 30px;
+        top: 7px;
+
+    }
+
+    .btn {
+        margin: 0px 9px;
+        background-color: black;
+        color: white;
+        padding: 6px 14px;
+        border: 2px solid pink;
+        border-radius: 10px;
+        font-size: 15px;
+        cursor: pointer;
+        font-family: 'Baloo Bhaijaan 2', cursive;
+
+    }
+
+    .btn:hover {
+        background-color: royalblue;
+    }
+
+
+    .container {
+        border: 2px solid white;
+        margin: 215px 12px;
+        padding: 75px;
+        width: 33%;
+        border-radius: 28px;
+    }
+
+    .container div input {
+
+        display: block;
+        text-align: center;
+        width: 508px;
+        padding: 1px;
+        border: 2px solid black;
+        border-radius: 10px;
+        margin: 12px auto;
+        font-size: 21px;
+        font-family: 'Baloo Bhaijaan 2', cursive;
+
+
+    }
+
+    .container h1 {
+        text-align: center;
+
+    }
+
+    .form-group button {
+        display: block;
+        width: 33%;
+        margin: auto;
+    }
+
+    /* .mansitxt {
+
+        margin: -135px 140px;
+        padding: 64px;
+        border-radius: 20px;
+        color: black;
+        font-size: 20px;
+        display: block;
+        width: 13%;
+        background-color: rgb(116, 136, 250);
+        height: 1px;
+
+    } */
+
+    .container h1:hover{
+        cursor: pointer;
+        color: rgb(40, 231, 40);
+
+    }
+
+    .container button{
+        display: inline-block;
+        margin: 14px 41px auto;
+       
+    }
+</style>
+
+<body>
+
+
+    <header class="head">
+        <!-- left box for logo -->
+        <div class="left">
+            <img src="logo.jpeg" alt="">
+            <div class="mansitxt">
+                Mansi Beauty Parlour
+            </div>
+
+
+        </div>
+        <!-- mid box for navbar -->
+        <div class="mid">
+            <ul class="navbar">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+
+
+        <!-- right box for buttons -->
+        <div class="right">
+            <button class="btn">Call Us Now</button>
+            <button class="btn">Email Us</button>
+
+        </div>
+
+    </header>
+    
+    <div class="container">
+        <h1>FEEL NATURAL,FEEL BEAUTIFUL</h1>
+        <form action="noaction.php">
+
+            <div class="form-group">
+                <input type="text" name="" placeholder="Enter Your Name">
+                <input type="email" name="" placeholder="Enter Your Email">
+                <input type="number" name="" placeholder="Enter Your Contact Number">
+                <input type="text" name="" placeholder="Enter Your Preferences">
+
+                <button class="btn">Submit</button>
+                <button class="btn" type="reset">RESET</button>
+
+
+            </div>
+
+        </form>
+    </div>
+
+</body>
+
+</html>
