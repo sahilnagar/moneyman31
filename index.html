@@ -1,810 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Money Man:Expense Tracker</title>
-    <meta property="og:title" content="Official Intent Baboon" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta charset="utf-8" />
-    <meta property="twitter:card" content="summary_large_image" />
 
-    <style data-tag="reset-style-sheet">
-      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
-    </style>
-    <style data-tag="default-style-sheet">
-      html {
-        font-family: Inter;
-        font-size: 16px;
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Money-Man Login Page</title>
+  <link rel="stylesheet" type="text/css" href="style2.css">
+</head>
 
-      body {
-        font-weight: 400;
-        font-style:normal;
-        text-decoration: none;
-        text-transform: none;
-        letter-spacing: normal;
-        line-height: 1.15;
-        color: var(--dl-color-gray-black);
-        background-color: var(--dl-color-gray-white);
+<body>
 
-      }
-    </style>
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/animate.css@4.1.1/animate.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
-    />
-    <style>
-      @keyframes fade-in-left {
-        0% {
-          opacity: 0;
-          transform: translateX(-20px);
-        }
-        100% {
-          opacity: 1;
-          transform: translateX(0);
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <link rel="stylesheet" href="./style.css" />
-    <div>
-      <link href="./index.css" rel="stylesheet" />
+  <div class="wrapper">
+    <div class="form-wrapper sign-in">
+      <form action="">
+        <h1>Money-Man</h1>
+        <!-- <h5>Save like a Superhero</h5> -->
+        <h2>Login</h2>
+        <div class="input-group">
+          <input type="text" required id="email">
+          <label for="">Username</label>
+        
+        </div>
+        <div class="input-group">
+          <input type="password" required id="password">
+          <label for="">Password</label>
+        </div>
+        <div class="remember">
+          <label><input type="checkbox"> Remember me</label>
+        </div>
+        <!-- <input type="submit" value="Login" class="submit-btn" onclick="auth()"/> -->
+        <!-- <button type="submit" class="btn btn-outline" onClick="auth()">Login</button> -->
+        <button id="myButton" class="float-left submit-button" >Login</button>
+        <button id="myButton2" class="float-left submit-button" >Sign In As Guest</button>
 
-      <div class="home-container">
-        <div class="home-header"></div>
-        <div class="home-hero">
-          <div class="heroContainer home-hero1">
-            <div class="home-container01">
-              <h1 class="home-hero-heading heading1"></h1>
-              <span class="home-hero-sub-heading bodyLarge">
-                <span>
-                  <span>
-                    <span></span>
-                    <span></span>
-                  </span>
-                  <span>
-                    <span></span>
-                    <span></span>
-                  </span>
-                </span>
-                <span>
-                  <span>
-                    <span></span>
-                    <span></span>
-                  </span>
-                  <span>
-                    <span></span>
-                    <span></span>
-                  </span>
-                </span>
-              </span>
-              <div class="home-btn-group">
-                <!-- <button class="buttonFilled">Get Started</button> -->
-                <!-- <button class="buttonFlat">Learn More&nbsp;→</button> -->
-              </div>
-            </div>
-          </div>
+        <div class="signUp-link">
+          <p>Don't have an account? <a href="#" class="signUpBtn-link">Sign Up</a></p>
         </div>
-        <div class="home-features">
-          <div class="featuresContainer">
-            <div class="home-features1">
-              <div class="home-container02">
-                <span class="overline">
-                  <span>features</span>
-                  <br />
-                </span>
-                <h2 class="home-features-heading heading2">
-                  Manage Your Expenses with Ease
-                </h2>
-                <span class="home-features-sub-heading bodyLarge">
-                  <span>
-                    <span>
-                      <span>
-                        Discover the powerful features that make expense
-                        management a breeze
-                      </span>
-                      <span></span>
-                    </span>
-                    <span>
-                      <span></span>
-                      <span></span>
-                    </span>
-                  </span>
-                  <span>
-                    <span>
-                      <span></span>
-                      <span></span>
-                    </span>
-                    <span>
-                      <span></span>
-                      <span></span>
-                    </span>
-                  </span>
-                </span>
-              </div>
-              <div class="home-container03">
-                <div class="featuresCard feature-card-feature-card">
-                  <svg viewBox="0 0 1024 1024" class="featuresIcon">
-                    <path
-                      d="M809.003 291.328l-297.003 171.819-297.003-171.819 275.456-157.397c4.779-2.731 9.899-4.48 15.147-5.333 9.301-1.451 18.987 0.128 27.904 5.291zM491.776 979.669c6.016 3.243 12.928 5.077 20.224 5.077 7.381 0 14.336-1.877 20.395-5.163 15.189-2.475 29.909-7.68 43.392-15.36l298.709-170.709c26.368-15.232 45.269-38.315 55.424-64.597 5.675-14.592 8.619-30.165 8.747-46.251v-341.333c0-20.395-4.821-39.723-13.397-56.917-0.939-3.029-2.219-5.973-3.883-8.832-1.963-3.371-4.267-6.357-6.912-8.96-1.323-1.835-2.731-3.669-4.139-5.419-9.813-12.203-21.845-22.528-35.456-30.507l-299.051-170.88c-26.027-15.019-55.467-19.84-83.328-15.531-15.531 2.432-30.507 7.637-44.288 15.488l-298.709 170.709c-16.341 9.429-29.824 21.888-40.149 36.267-2.56 2.56-4.864 5.547-6.784 8.832-1.664 2.901-2.987 5.888-3.925 8.96-1.707 3.456-3.243 6.955-4.608 10.496-5.632 14.635-8.576 30.208-8.704 45.995v341.632c0.043 30.293 10.581 58.197 28.331 80.128 9.813 12.203 21.845 22.528 35.456 30.507l299.051 170.88c13.824 7.979 28.587 13.099 43.605 15.445zM469.333 537.045v340.949l-277.12-158.336c-4.736-2.773-8.832-6.315-12.16-10.411-5.931-7.381-9.387-16.512-9.387-26.581v-318.379zM554.667 877.995v-340.949l298.667-172.757v318.379c-0.043 5.163-1.067 10.496-2.987 15.445-3.413 8.789-9.6 16.384-18.176 21.333z"
-                    ></path>
-                  </svg>
-                  <div class="feature-card-container">
-                    <h3 class="feature-card-text heading3">
-                      <span><a href="page2/track.html">Expense Tracking</a></span>
-                    </h3>
-                    <span class="bodySmall">
-                      <span>
-                        Effortlessly track your expenses and stay on top of your
-                        finances                                   
-                        
-                        </span>
-                      </span>
-                    </span>
-                  </div>
-                </div>
-                <div class="featuresCard feature-card-feature-card">
-                  <svg viewBox="0 0 1024 1024" class="featuresIcon">
-                    <path
-                      d="M809.003 291.328l-297.003 171.819-297.003-171.819 275.456-157.397c4.779-2.731 9.899-4.48 15.147-5.333 9.301-1.451 18.987 0.128 27.904 5.291zM491.776 979.669c6.016 3.243 12.928 5.077 20.224 5.077 7.381 0 14.336-1.877 20.395-5.163 15.189-2.475 29.909-7.68 43.392-15.36l298.709-170.709c26.368-15.232 45.269-38.315 55.424-64.597 5.675-14.592 8.619-30.165 8.747-46.251v-341.333c0-20.395-4.821-39.723-13.397-56.917-0.939-3.029-2.219-5.973-3.883-8.832-1.963-3.371-4.267-6.357-6.912-8.96-1.323-1.835-2.731-3.669-4.139-5.419-9.813-12.203-21.845-22.528-35.456-30.507l-299.051-170.88c-26.027-15.019-55.467-19.84-83.328-15.531-15.531 2.432-30.507 7.637-44.288 15.488l-298.709 170.709c-16.341 9.429-29.824 21.888-40.149 36.267-2.56 2.56-4.864 5.547-6.784 8.832-1.664 2.901-2.987 5.888-3.925 8.96-1.707 3.456-3.243 6.955-4.608 10.496-5.632 14.635-8.576 30.208-8.704 45.995v341.632c0.043 30.293 10.581 58.197 28.331 80.128 9.813 12.203 21.845 22.528 35.456 30.507l299.051 170.88c13.824 7.979 28.587 13.099 43.605 15.445zM469.333 537.045v340.949l-277.12-158.336c-4.736-2.773-8.832-6.315-12.16-10.411-5.931-7.381-9.387-16.512-9.387-26.581v-318.379zM554.667 877.995v-340.949l298.667-172.757v318.379c-0.043 5.163-1.067 10.496-2.987 15.445-3.413 8.789-9.6 16.384-18.176 21.333z"
-                    ></path>
-                  </svg>
-                  <div class="feature-card-container">
-                    <h3 class="feature-card-text heading3">
-                      <span>Budget Management</span>
-                    </h3>
-                    <span class="bodySmall">
-                      <span>
-                        Set budgets and monitor your spending to achieve your
-                        financial goals
-                      </span>
-                    </span>
-                  </div>
-                </div>
-                <div class="featuresCard feature-card-feature-card">
-                  <svg viewBox="0 0 1024 1024" class="featuresIcon">
-                    <path
-                      d="M809.003 291.328l-297.003 171.819-297.003-171.819 275.456-157.397c4.779-2.731 9.899-4.48 15.147-5.333 9.301-1.451 18.987 0.128 27.904 5.291zM491.776 979.669c6.016 3.243 12.928 5.077 20.224 5.077 7.381 0 14.336-1.877 20.395-5.163 15.189-2.475 29.909-7.68 43.392-15.36l298.709-170.709c26.368-15.232 45.269-38.315 55.424-64.597 5.675-14.592 8.619-30.165 8.747-46.251v-341.333c0-20.395-4.821-39.723-13.397-56.917-0.939-3.029-2.219-5.973-3.883-8.832-1.963-3.371-4.267-6.357-6.912-8.96-1.323-1.835-2.731-3.669-4.139-5.419-9.813-12.203-21.845-22.528-35.456-30.507l-299.051-170.88c-26.027-15.019-55.467-19.84-83.328-15.531-15.531 2.432-30.507 7.637-44.288 15.488l-298.709 170.709c-16.341 9.429-29.824 21.888-40.149 36.267-2.56 2.56-4.864 5.547-6.784 8.832-1.664 2.901-2.987 5.888-3.925 8.96-1.707 3.456-3.243 6.955-4.608 10.496-5.632 14.635-8.576 30.208-8.704 45.995v341.632c0.043 30.293 10.581 58.197 28.331 80.128 9.813 12.203 21.845 22.528 35.456 30.507l299.051 170.88c13.824 7.979 28.587 13.099 43.605 15.445zM469.333 537.045v340.949l-277.12-158.336c-4.736-2.773-8.832-6.315-12.16-10.411-5.931-7.381-9.387-16.512-9.387-26.581v-318.379zM554.667 877.995v-340.949l298.667-172.757v318.379c-0.043 5.163-1.067 10.496-2.987 15.445-3.413 8.789-9.6 16.384-18.176 21.333z"
-                    ></path>
-                  </svg>
-                  <div class="feature-card-container">
-                    <h3 class="feature-card-text heading3">
-                      <span>Receipt Scanning</span>
-                    </h3>
-                    <span class="bodySmall">
-                      <span>
-                        Scan and store receipts digitally for easy expense
-                        management and record keeping
-                      </span>
-                    </span>
-                  </div>
-                </div>
-                <div class="featuresCard feature-card-feature-card">
-                  <svg viewBox="0 0 1024 1024" class="featuresIcon">
-                    <path
-                      d="M809.003 291.328l-297.003 171.819-297.003-171.819 275.456-157.397c4.779-2.731 9.899-4.48 15.147-5.333 9.301-1.451 18.987 0.128 27.904 5.291zM491.776 979.669c6.016 3.243 12.928 5.077 20.224 5.077 7.381 0 14.336-1.877 20.395-5.163 15.189-2.475 29.909-7.68 43.392-15.36l298.709-170.709c26.368-15.232 45.269-38.315 55.424-64.597 5.675-14.592 8.619-30.165 8.747-46.251v-341.333c0-20.395-4.821-39.723-13.397-56.917-0.939-3.029-2.219-5.973-3.883-8.832-1.963-3.371-4.267-6.357-6.912-8.96-1.323-1.835-2.731-3.669-4.139-5.419-9.813-12.203-21.845-22.528-35.456-30.507l-299.051-170.88c-26.027-15.019-55.467-19.84-83.328-15.531-15.531 2.432-30.507 7.637-44.288 15.488l-298.709 170.709c-16.341 9.429-29.824 21.888-40.149 36.267-2.56 2.56-4.864 5.547-6.784 8.832-1.664 2.901-2.987 5.888-3.925 8.96-1.707 3.456-3.243 6.955-4.608 10.496-5.632 14.635-8.576 30.208-8.704 45.995v341.632c0.043 30.293 10.581 58.197 28.331 80.128 9.813 12.203 21.845 22.528 35.456 30.507l299.051 170.88c13.824 7.979 28.587 13.099 43.605 15.445zM469.333 537.045v340.949l-277.12-158.336c-4.736-2.773-8.832-6.315-12.16-10.411-5.931-7.381-9.387-16.512-9.387-26.581v-318.379zM554.667 877.995v-340.949l298.667-172.757v318.379c-0.043 5.163-1.067 10.496-2.987 15.445-3.413 8.789-9.6 16.384-18.176 21.333z"
-                    ></path>
-                  </svg>
-                  <div class="feature-card-container">
-                    <h3 class="feature-card-text heading3">
-                      <span>Expense Reports</span>
-                    </h3>
-                    <span class="bodySmall">
-                      <span>
-                        Generate detailed expense reports with just a few clicks
-                      </span>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="home-pricing">
-          <div class="pricingContainer">
-            <div class="home-container04">
-              <span class="overline">
-                <span>Pricing</span>
-                <br />
-              </span>
-              <h2 class="heading2">Choose the Right Plan for You</h2>
-              <span class="home-pricing-sub-heading bodyLarge">
-                <span>
-                  <span>
-                    Manage your expenses effectively with our flexible pricing
-                    options
-                  </span>
-                </span>
-              </span>
-            </div>
-            <div class="home-container05">
-              <div class="freePricingCard home-pricing-card">
-                <div class="home-container06">
-                  <span class="home-text36 heading3">Free</span>
-                  <span class="bodySmall">A free plan with basic features</span>
-                </div>
-                <div class="home-container07">
-                  <span class="home-text37">
-                    <span>$</span>
-                    <span></span>
-                  </span>
-                  <span class="home-free-plan-price">0</span>
-                </div>
-                <div class="home-container08">
-                  <div class="home-container09">
-                    <span class="home-text40">✔</span>
-                    <span class="bodySmall">Expense tracking</span>
-                  </div>
-                  <div class="home-container10">
-                    <span class="home-text41">✔</span>
-                    <span class="bodySmall">Budget management</span>
-                  </div>
-                  <div class="home-container11">
-                    <span class="home-text42">✔</span>
-                    <span class="bodySmall">Basic reporting</span>
-                  </div>
-                  <div class="home-container12">
-                    <span class="home-text43">✔</span>
-                    <span class="bodySmall">Email support</span>
-                  </div>
-                </div>
-                <button class="home-button buttonOutline">
-                  Continue with Free
-                </button>
-              </div>
-              <div class="basicPricingCard home-pricing-card1">
-                <div class="home-container13">
-                  <span class="home-text44 heading3">BASIC</span>
-                  <span class="bodySmall">
-                    A plan with additional features for personal use
-                  </span>
-                </div>
-                <div class="home-container14">
-                  <span class="home-text45">
-                    <span>$</span>
-                    <span></span>
-                  </span>
-                  <span class="home-basic-plan-pricing">9.99</span>
-                  <span class="home-text48">/ month</span>
-                </div>
-                <div class="home-container15">
-                  <div class="home-container16">
-                    <span class="home-text49">✔</span>
-                    <span class="bodySmall">All features of FREE plan</span>
-                  </div>
-                  <div class="home-container17">
-                    <span class="home-text51">✔</span>
-                    <span class="bodySmall">Expense tracking</span>
-                  </div>
-                  <div class="home-container18">
-                    <span class="home-text52">✔</span>
-                    <span class="bodySmall">Budget management</span>
-                  </div>
-                  <div class="home-container19">
-                    <span class="home-text53">✔</span>
-                    <span class="bodySmall">Advanced reporting</span>
-                  </div>
-                  <div class="home-container20">
-                    <span class="home-text54">✔</span>
-                    <span class="bodySmall">Priority email support</span>
-                  </div>
-                </div>
-                <button class="home-button1 buttonFilledSecondary">
-                  Try the Basic plan
-                </button>
-              </div>
-              <div class="proPricingCard home-pricing-card2">
-                <div class="home-container21">
-                  <span class="home-text55 heading3">
-                    <span>PRO</span>
-                    <br />
-                  </span>
-                  <span class="bodySmall">
-                    A plan with advanced features for businesses and
-                    professionals
-                  </span>
-                </div>
-                <div class="home-container22">
-                  <span class="home-text58">
-                    <span>$</span>
-                    <span></span>
-                  </span>
-                  <span class="home-pro-plan-pricing">19.99</span>
-                  <span class="home-text61">/ month</span>
-                </div>
-                <div class="home-container23">
-                  <div class="home-container24">
-                    <span class="home-text62">✔</span>
-                    <span class="bodySmall">
-                      &nbsp;All features of BASIC plan
-                    </span>
-                  </div>
-                  <div class="home-container25">
-                    <span class="home-text64">✔</span>
-                    <span class="bodySmall">Expense tracking</span>
-                  </div>
-                  <div class="home-container26">
-                    <span class="home-text65">✔</span>
-                    <span class="bodySmall">Budget management</span>
-                  </div>
-                  <div class="home-container27">
-                    <span class="home-text66">✔</span>
-                    <span class="bodySmall">Advanced reporting</span>
-                  </div>
-                  <div class="home-container28">
-                    <span class="home-text67">✔</span>
-                    <span class="bodySmall">
-                      Priority email and phone support
-                    </span>
-                  </div>
-                </div>
-                <button class="home-button2 buttonFilledSecondary">
-                  Try the PRO plan
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="home-banner">
-          <div class="bannerContainer home-banner1">
-            <h1 class="home-banner-heading heading2">
-              Simplify Your Expense Tracking
-            </h1>
-            <span class="home-banner-sub-heading bodySmall">
-              <span>
-                <span>
-                  <span>
-                    Manage your expenses effortlessly with our powerful expense
-                    manager. Keep track of your spending, set budgets, and
-                    achieve your financial goals.
-                  </span>
-                  <span></span>
-                </span>
-                <span>
-                  <span></span>
-                  <span></span>
-                </span>
-              </span>
-              <span>
-                <span>
-                  <span></span>
-                  <span></span>
-                </span>
-                <span>
-                  <span></span>
-                  <span></span>
-                </span>
-              </span>
-            </span>
-            <button class="buttonFilled">Learn More</button>
-          </div>
-        </div>
-        <div class="home-faq">
-          <div class="faqContainer">
-            <div class="home-faq1">
-              <div class="home-container29">
-                <span class="overline">
-                  <span>FAQ</span>
-                  <br />
-                </span>
-                <h2 class="home-text85 heading2">Common questions</h2>
-                <span class="home-text86 bodyLarge">
-                  <span>
-                    Here are some of the most common questions that we get.
-                  </span>
-                  <br />
-                </span>
-              </div>
-              <div class="home-container30">
-                <div class="question1-container">
-                  <span class="question1-text heading3">
-                    <span>What is an expense manager?</span>
-                  </span>
-                  <span class="bodySmall">
-                    <span>
-                      An expense manager is a tool or software that helps
-                      individuals or businesses track and manage their expenses.
-                    </span>
-                  </span>
-                </div>
-                <div class="question1-container">
-                  <span class="question1-text heading3">
-                    <span>Why should I use an expense manager?</span>
-                  </span>
-                  <span class="bodySmall">
-                    <span>
-                      Using an expense manager can help you keep track of your
-                      spending, create budgets, and analyze your financial
-                      habits. It can save you time, reduce errors, and provide
-                      valuable insights into your financial health.
-                    </span>
-                  </span>
-                </div>
-                <div class="question1-container">
-                  <span class="question1-text heading3">
-                    <span>
-                      Is my financial data secure with the expense manager?
-                    </span>
-                  </span>
-                  <span class="bodySmall">
-                    <span>
-                      Yes, we take the security of your financial data
-                      seriously. Our expense manager uses encryption and follows
-                      industry best practices to ensure the confidentiality and
-                      integrity of your information.
-                    </span>
-                  </span>
-                </div>
-                <div class="question1-container">
-                  <span class="question1-text heading3">
-                    <span>
-                      Can I access my expense manager from multiple devices?
-                    </span>
-                  </span>
-                  <span class="bodySmall">
-                    <span>
-                      Absolutely! Our expense manager is designed to be
-                      accessible from any device with an internet connection.
-                      You can access it from your computer, smartphone, or
-                      tablet.
-                    </span>
-                  </span>
-                </div>
-                <div class="question1-container">
-                  <span class="question1-text heading3">
-                    <span>
-                      Is there a free trial available for the expense manager?
-                    </span>
-                  </span>
-                  <span class="bodySmall">
-                    <span>
-                      Yes, we offer a free trial period for our expense manager.
-                      You can sign up and explore its features before making a
-                      purchase decision.
-                    </span>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="home-footer"></div>
-      </div>
+      </form>
     </div>
-    <footer>
-      <div class="center">
-          Copyright &copy; www.moneyman.com All Rights Reserved! <br>
-          Managed by:Sahil Nagar,Piyush Gehlot and Ritik Kumar Kalet
-          
-      </div>
-  </footer>
-    <script
-      data-section-id="navbar"
-      src="https://unpkg.com/@teleporthq/teleport-custom-scripts"
-    ></script>
-  </body>
+
+    <!-- <script type="text/javascript">
+      document.getElementById("myButton").onclick = function () {
+          location.href = "www.yoursite.com";
+          alert("Hi");
+      };
+  </script> -->
+
+
+
+
+
+
+
+    <div class="form-wrapper sign-up">
+      <form action="">
+        <h2>Sign Up</h2>
+        <div class="input-group">
+          <input type="text" required>
+          <label for="">Username</label>
+        </div>
+        <div class="input-group">
+          <input type="email" required>
+          <label for="">Email</label>
+        </div>
+        <div class="input-group">
+          <input type="password" required>
+          <label for="">Password</label>
+        </div>
+        <div class="remember">
+          <label><input type="checkbox"> I agree to the terms & conditions</label>
+        </div>
+        <button type="submit">Sign Up</button>
+        <div class="signUp-link">
+          <p>Already have an account? <a href="#" class="signInBtn-link">Sign In</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+  <!-- <script>
+    function auth(){
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+
+    if(email=="admin@gmail.com" && password=="sahil123"){
+        // window.location.assign="Home.html";
+        window.location.replace("Home.html");
+        alert("Login Succesful");
+    }else{
+        alert("Invalid Information");
+        return;
+    }
+}
+  </script> -->
+
+  <!--  <script>
+    function auth() {
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+
+    if (email === "admin@gmail.com" && password === "user") {
+        // window.location.replace("www.youtube.com");
+        location.href = "www.yoursite.com";
+        // alert("You Are a ADMIN");
+
+    } else {
+        alert("Invalid information");
+        return;
+    } -->
+
+<!-- } -->
+
+  <!-- </script> -->
+</body>
+
 </html>
