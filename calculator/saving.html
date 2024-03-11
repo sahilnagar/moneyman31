@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savings Accumulator</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .calculator {
+            border: 2px solid #012f1e;
+            border-radius: 8px;
+            background-color: #fff;
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #012f1e;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #012f1e;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #026c4e;
+        }
+
+        p {
+            font-size: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calculator">
+        <h2>Savings Accumulation Calculator</h2>
+        <form id="savingsForm">
+            <label for="initialAmount">Initial Amount:</label>
+            <input type="number" id="initialAmount" placeholder="Initial amount" required>
+            <label for="monthlyContribution">Monthly Contribution:</label>
+            <input type="number" id="monthlyContribution" placeholder="Monthly contribution" required>
+            <label for="interestRateSavings">Interest Rate (%):</label>
+            <input type="number" id="interestRateSavings" placeholder="Interest rate" required>
+            <label for="years">Years:</label>
+            <input type="number" id="years" placeholder="Number of years" required>
+            <button type="button" onclick="calculateSavings()">Calculate</button>
+        </form>
+        <p id="savingsResult"></p>
+    </div>
+
+    <script>
+        function calculateSavings() {
+            const initialAmount = parseFloat(document.getElementById('initialAmount').value);
+            const monthlyContribution = parseFloat(document.getElementById('monthlyContribution').value);
+            const interestRate = parseFloat(document.getElementById('interestRateSavings').value) / 100;
+            const years = parseFloat(document.getElementById('years').value);
+
+            const monthlyInterestRate = interestRate / 12;
+            const numberOfMonths = years * 12;
+
+            let total = initialAmount;
+            for (let i = 0; i < numberOfMonths; i++) {
+                total += monthlyContribution;
+                total *= (1 + monthlyInterestRate);
+            }
+
+            const formattedTotal = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(total.toFixed(2));
+            document.getElementById('savingsResult').innerText = `Total Savings: ${formattedTotal}`;
+        }
+    </script>
+
+</body>
+
+</html>

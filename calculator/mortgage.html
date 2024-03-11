@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mortgage Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .calculator {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+<div class="calculator">
+  <h2>Mortgage Calculator</h2>
+  <label for="loanAmount">Loan Amount (Rs.):</label>
+  <input type="number" id="loanAmount" placeholder="Enter loan amount">
+
+  <label for="interestRate">Annual Interest Rate (%):</label>
+  <input type="number" id="interestRate" placeholder="Enter interest rate">
+
+  <label for="loanTerm">Loan Term (years):</label>
+  <input type="number" id="loanTerm" placeholder="Enter loan term">
+
+  <label for="downPayment">Down Payment (Rs.):</label>
+  <input type="number" id="downPayment" placeholder="Enter down payment">
+
+  <button onclick="calculateMortgage()">Calculate</button>
+
+  <h3>Monthly Payment:</h3>
+  <div id="monthlyPayment"></div>
+</div>
+
+<script>
+  function calculateMortgage() {
+    const loanAmount = parseFloat(document.getElementById('loanAmount').value);
+    const interestRate = parseFloat(document.getElementById('interestRate').value) / 100 / 12;
+    const loanTermMonths = parseFloat(document.getElementById('loanTerm').value) * 12;
+    const downPayment = parseFloat(document.getElementById('downPayment').value);
+
+    const principal = loanAmount - downPayment;
+    const monthlyPayment = (principal * interestRate) / (1 - Math.pow(1 + interestRate, -loanTermMonths));
+
+    document.getElementById('monthlyPayment').innerHTML = `Rs.${monthlyPayment.toFixed(2)}`;
+  }
+</script>
+
+</body>
+</html>

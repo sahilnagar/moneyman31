@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expense Report</title>
+<style>
+    /* Basic CSS reset */
+    * {
+        box-sizing: border-box;
+    }
+
+    /* Body styles */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f4f4f4;
+    }
+
+    /* Container styles */
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    /* Heading styles */
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+
+    /* Form styles */
+    .expense-form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .expense-form label {
+        flex: 1 1 100%;
+    }
+
+    .expense-form input[type="text"],
+    .expense-form input[type="number"] {
+        width: calc(100% - 70px);
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .expense-form select {
+        width: calc(100% - 70px);
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .expense-form button {
+        width: 100px;
+        padding: 8px;
+        border: none;
+        background-color: #4caf50;
+        color: #fff;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .expense-form button:hover {
+        background-color: #45a049;
+    }
+
+    /* Expense list styles */
+    .expense-list {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 20px;
+    }
+
+    .expense-item {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 10px;
+        margin-bottom: 5px;
+        background-color: #f9f9f9;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .expense-item strong {
+        color: #333;
+    }
+
+    .expense-item .category {
+        color: #555;
+    }
+
+    /* Expense table styles */
+    .expense-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .expense-table th, .expense-table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    .expense-table th {
+        background-color: #f2f2f2;
+    }
+
+    .expense-table td {
+        background-color: #fff;
+    }
+
+    /* Total styles */
+    .total-container {
+        margin-top: 20px;
+        text-align: right;
+    }
+</style>
+</head>
+<body>
+
+<h1>Expense Report</h1>
+
+<div class="container">
+    <h2>Select Expense Report Type</h2>
+    <form id="report-type-form">
+        <input type="radio" id="personal" name="report-type" value="personal" checked>
+        <label for="personal">Personal</label>
+        <input type="radio" id="business" name="report-type" value="business">
+        <label for="business">Business</label>
+    </form>
+</div>
+
+<div class="container" id="personal-expense-container">
+    <h2>Personal Expense Report</h2>
+    <form class="expense-form" id="personal-expense-form">
+        <label for="expense-desc">Description:</label>
+        <input type="text" id="personal-expense-desc" required>
+        <label for="expense-amount">Amount:</label>
+        <input type="number" id="personal-expense-amount" required>
+        <button type="button" onclick="addExpense('personal-expenses', 'personal-expense-desc', 'personal-expense-amount')">Add Expense</button>
+    </form>
+    <h3>Expense List</h3>
+    <ul class="expense-list" id="personal-expenses">
+        <!-- Personal expenses will be dynamically added here -->
+    </ul>
+    <div class="total-container" id="personal-total">
+        Total: <span id="personal-total-amount">₹0.00</span>
+    </div>
+</div>
+
+<div class="container" id="business-expense-container" style="display: none;">
+    <h2>Business Expense Report</h2>
+    <form class="expense-form" id="business-expense-form">
+        <label for="business-expense-date">Date:</label>
+        <input type="date" id="business-expense-date" required>
+        <label for="business-expense-desc">Description:</label>
+        <input type="text" id="business-expense-desc" required>
+        <label for="business-expense-amount">Amount:</label>
+        <input type="number" id="business-expense-amount" required>
+        <label for="business-expense-category">Category:</label>
+        <select id="business-expense-category" required>
+            <option value="">Select Category</option>
+            <option value="Travel">Travel</option>
+            <option value="Meals">Meals</option>
+            <option value="Office Supplies">Office Supplies</option>
+            <option value="Utilities">Utilities</option>
+            <!-- Add more categories as needed -->
+        </select>
+        <button type="button" onclick="addExpense('business-expenses', 'business-expense-date', 'business-expense-desc', 'business-expense-amount', 'business-expense-category')">Add Expense</button>
+    </form>
+    <h3>Expense List</h3>
+    <table class="expense-table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Amount</th>
+                <th>Category</th>
+            </tr>
+        </thead>
+        <tbody id="business-expenses">
+            <!-- Business expenses will be dynamically added here -->
+        </tbody>
+    </table>
+    <div class="total-container" id="business-total">
+        Total: <span id="business-total-amount">₹0.00</span>
+    </div>
+</div>
+
+<script>
+    // Event listener for report type selection
+    document.getElementById('report-type-form').addEventListener('change', function() {
+        const selectedType = document.querySelector('input[name="report-type"]:checked').value;
+        if (selectedType === 'personal') {
+            document.getElementById('personal-expense-container').style.display = 'block';
+            document.getElementById('business-expense-container').style.display = 'none';
+        } else {
+            document.getElementById('personal-expense-container').style.display = 'none';
+            document.getElementById('business-expense-container').style.display = 'block';
+        }
+    });
+
+    // Common function to add expense
+    function addExpense(listId, descId, amountId) {
+        const desc = document.getElementById(descId).value;
+        const amount = parseFloat(document.getElementById(amountId).value);
+        const expenseList = document.getElementById(listId);
+        const newExpense = document.createElement('li');
+        newExpense.innerHTML = `<strong>${desc}</strong>: ₹${amount.toFixed(2)}`;
+        expenseList.appendChild(newExpense);
+        updateTotal();
+    }
+
+    // Update total
+    function updateTotal() {
+        const personalTotal = calculateTotal('personal-expenses');
+        const businessTotal = calculateTotal('business-expenses');
+        document.getElementById('personal-total-amount').textContent = `₹${personalTotal.toFixed(2)}`;
+        document.getElementById('business-total-amount').textContent = `₹${businessTotal.toFixed(2)}`;
+    }
+
+    // Calculate total
+    function calculateTotal(listId) {
+        const expenses = document.querySelectorAll(`#${listId} li`);
+        let total = 0;
+        expenses.forEach(expense => {
+            const amount = parseFloat(expense.textContent.replace(/^\D+/g, ''));
+            total += amount;
+        });
+        return total;
+    }
+</script>
+
+</body>
+</html>

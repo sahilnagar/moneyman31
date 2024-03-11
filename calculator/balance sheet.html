@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Balance Sheet</title>
+<style>
+        body {
+          font-family: Arial, sans-serif;
+          background-color: #f5f5f5;
+          margin: 0;
+          padding: 0;
+        }
+        
+        .container {
+          max-width: 800px;
+          margin: 20px auto;
+          padding: 20px;
+          background-color: #fff;
+          border-radius: 8px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+          text-align: center;
+        }
+        
+        .balance-sheet {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 20px;
+        }
+        
+        .assets, .liabilities {
+          flex-basis: 45%;
+        }
+        
+        .table-container {
+          margin-bottom: 20px;
+        }
+        
+        table {
+          width: 100%;
+          border-collapse: collapse;
+        }
+        
+        table th, table td {
+          padding: 10px;
+          border: 1px solid #ddd;
+          text-align: left;
+        }
+        
+        .table-header {
+          background-color: #f2f2f2;
+        }
+        
+        .add-row {
+          display: block;
+          margin: 10px auto;
+          padding: 8px 16px;
+          background-color: #4CAF50;
+          color: white;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          text-align: center;
+          font-size: 16px;
+        }
+        
+        .add-row:hover {
+          background-color: #45a049;
+        }
+        
+        .total {
+          text-align: right;
+          font-weight: bold;
+        }
+        
+        .balance-check {
+          text-align: center;
+          font-weight: bold;
+        }
+    </style>
+
+</head>
+<body>
+<div class="container">
+  <div class="balance-sheet">
+    <div class="assets">
+      <h2>Assets</h2>
+      <div class="table-container">
+        <table id="assets-table">
+          <thead>
+            <tr class="table-header">
+              <th>Name</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody id="assets-body">
+            <tr>
+              <td>Cash</td>
+              <td><input type="number" class="asset-amount" placeholder="Amount"></td>
+            </tr>
+            <tr>
+              <td>Cash Equivalents</td>
+              <td><input type="number" class="asset-amount" placeholder="Amount"></td>
+            </tr>
+            <tr>
+              <td>Short-term Deposits</td>
+              <td><input type="number" class="asset-amount" placeholder="Amount"></td>
+            </tr>
+            <tr>
+              <td>Accounts Receivable</td>
+              <td><input type="number" class="asset-amount" placeholder="Amount"></td>
+            </tr>
+            <tr>
+              <td>Inventory</td>
+              <td><input type="number" class="asset-amount" placeholder="Amount"></td>
+            </tr>
+            <tr>
+              <td>Marketable Securities</td>
+              <td><input type="number" class="asset-amount" placeholder="Amount"></td>
+            </tr>
+            <tr>
+              <td>Office Supplies</td>
+              <td><input type="number" class="asset-amount" placeholder="Amount"></td>
+            </tr>
+            <tr>
+              <td>Land</td>
+              <td><input type="number" class="asset-amount" placeholder="Amount"></td>
+            </tr>
+            <tr>
+              <td>Building</td>
+              <td><input type="number" class="asset-amount" placeholder="Amount"></td>
+            </tr>
+            <tr>
+              <td>Machinery</td>
+              <td><input type="number" class="asset-amount" placeholder="Amount"></td>
+            </tr>
+            <tr>
+              <td>Equipment</td>
+              <td><input type="number" class="asset-amount" placeholder="Amount"></td>
+            </tr>
+            <tr>
+              <td>Vehicle</td>
+              <td><input type="number" class="asset-amount" placeholder="Amount"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <button class="add-row" onclick="addAssetRow()">Add Asset</button>
+      <div class="total" id="total-assets">Total Assets: 0</div>
+    </div>
+
+    <div class="liabilities">
+      <h2>Liabilities</h2>
+      <div class="table-container">
+        <table id="liabilities-table">
+          <thead>
+            <tr class="table-header">
+              <th>Name</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody id="liabilities-body">
+            <tr>
+              <td>Accounts Payable</td>
+              <td><input type="number" class="liability-amount" placeholder="Amount"></td>
+            </tr>
+            <tr>
+              <td>Loans Payable</td>
+              <td><input type="number" class="liability-amount" placeholder="Amount"></td>
+            </tr>
+            <tr>
+              <td>Notes Payable</td>
+              <td><input type="number" class="liability-amount" placeholder="Amount"></td>
+            </tr>
+            <tr>
+                <td>Provisions</td>
+                <td><input type="number" class="liability-amount" placeholder="Amount"></td>
+            </tr>
+            <tr>
+                <td>Accrued Expenses</td>
+                <td><input type="number" class="liability-amount" placeholder="Amount"></td>
+            </tr>
+            <tr>
+                <td>Long-term Liabilities</td>
+                <td><input type="number" class="liability-amount" placeholder="Amount"></td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+      <button class="add-row" onclick="addLiabilityRow()">Add Liability</button>
+      <div class="total" id="total-liabilities">Total Liabilities: 0</div>
+    </div>
+  </div>
+  <div class="balance-check" id="balance-check"></div>
+  <button class="calculate" onclick="calculateBalance()">Calculate</button> <!-- New Calculate button -->
+</div>
+
+<script>
+function addAssetRow() {
+  const tableBody = document.getElementById('assets-body');
+  const newRow = document.createElement('tr');
+  newRow.innerHTML = `
+    <td><input type="text" class="asset-name" placeholder="Asset name"></td>
+    <td><input type="number" class="asset-amount" placeholder="Amount" oninput="updateTotals()"></td>
+  `;
+  tableBody.appendChild(newRow);
+}
+
+function addLiabilityRow() {
+  const tableBody = document.getElementById('liabilities-body');
+  const newRow = document.createElement('tr');
+  newRow.innerHTML = `
+    <td><input type="text" class="liability-name" placeholder="Liability name"></td>
+    <td><input type="number" class="liability-amount" placeholder="Amount" oninput="updateTotals()"></td>
+  `;
+  tableBody.appendChild(newRow);
+}
+
+function updateTotals() {
+  const assetAmounts = document.querySelectorAll('.asset-amount');
+  const liabilityAmounts = document.querySelectorAll('.liability-amount');
+  let totalAssets = 0;
+  let totalLiabilities = 0;
+
+  assetAmounts.forEach(amount => {
+    totalAssets += parseFloat(amount.value) || 0;
+  });
+
+  liabilityAmounts.forEach(amount => {
+    totalLiabilities += parseFloat(amount.value) || 0;
+  });
+
+  document.getElementById('total-assets').textContent = `Total Assets: ${totalAssets.toFixed(2)}`;
+  document.getElementById('total-liabilities').textContent = `Total Liabilities: ${totalLiabilities.toFixed(2)}`;
+
+  const balanceCheck = document.getElementById('balance-check');
+  const totalEquity = totalAssets - totalLiabilities;
+  if (totalEquity === 0) {
+    balanceCheck.textContent = 'Balance sheet is matched.';
+    balanceCheck.style.color = 'green';
+  } else {
+    balanceCheck.style.color = 'red';
+    if (totalEquity > 0) {
+      balanceCheck.textContent = `Balance sheet is not matched. Total assets exceed total liabilities by ${totalEquity.toFixed(2)}.`;
+    } else {
+      balanceCheck.textContent = `Balance sheet is not matched. Total liabilities exceed total assets by ${Math.abs(totalEquity).toFixed(2)}.`;
+    }
+  }
+}
+
+function calculateBalance() {
+  updateTotals(); // Calculate totals before checking balance
+}
+</script>   
+</body>
+</html>

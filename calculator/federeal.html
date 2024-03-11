@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Federal Income Tax Estimator</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('../calculator/mon.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            overflow: auto;
+        }
+        
+        .calculator {
+            border: 2px solid #3f51b5;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 40px;
+            margin: 50px auto;
+            max-width: 600px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #3f51b5;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #3f51b5;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #303f9f;
+        }
+
+        #incomeTaxResult {
+            font-size: 24px;
+            margin-top: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h2>Federal Income Tax Estimator</h2>
+        <label for="annualIncome">Annual Income:</label>
+        <input type="number" id="annualIncome" placeholder="Enter annual income">
+        <br>
+        <button onclick="calculateIncomeTax()">Calculate</button>
+        <p id="incomeTaxResult"></p>
+    </div>
+    
+    <script>
+        function calculateIncomeTax() {
+            const annualIncome = parseFloat(document.getElementById('annualIncome').value);
+
+            let tax = 0;
+
+            if (annualIncome <= 250000) {
+                tax = 0;
+            } else if (annualIncome <= 500000) {
+                tax = (annualIncome - 250000) * 0.05;
+            } else if (annualIncome <= 1000000) {
+                tax = 12500 + (annualIncome - 500000) * 0.1;
+            } else {
+                tax = 87500 + (annualIncome - 1000000) * 0.15;
+            }
+
+            document.getElementById('incomeTaxResult').innerText = `Estimated Federal Income Tax: ₹${tax.toFixed(2)}`;
+        }
+    </script>
+    
+</body>
+</html>

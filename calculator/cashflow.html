@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cash Flow Analysis</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 100;
+      padding: 100;
+      background-image: url('expensemanagersage\calculator\b.jpg'); /* Specify the path to your background image */
+      background-size: cover; /* Cover the entire background */
+      background-position: center; /* Center the background */
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: rgba(16, 115, 31, 0.409); /* Background color with opacity */
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input[type="number"] {
+      width: calc(100% - 22px);
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #9b0e0e38;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: #910606;
+      color: white;
+      padding: 10px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+      display: block;
+    }
+    button:hover {
+      background-color: #120c80;
+    }
+    #result {
+      margin-top: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #821919;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f0e3e3;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Cash Flow Analysis</h1>
+  <div id="inputs">
+    <label for="incomeInput">Income:</label>
+    <input type="number" class="incomeInput" placeholder="Enter amount">
+    <button onclick="addInput('incomeInput')">Add Income</button>
+    <label for="expensesInput">Expenses:</label>
+    <input type="number" class="expensesInput" placeholder="Enter amount">
+    <button onclick="addInput('expensesInput')">Add Expenses</button>
+    <label for="investmentsInput">Investments:</label>
+    <input type="number" class="investmentsInput" placeholder="Enter amount">
+    <button onclick="addInput('investmentsInput')">Add Investments</button>
+    <label for="financingInput">Financing Activities:</label>
+    <input type="number" class="financingInput" placeholder="Enter amount">
+    <button onclick="addInput('financingInput')">Add Financing</button>
+  </div>
+  <button onclick="calculateCashFlow()">Calculate</button>
+  <div id="result">
+    <table id="cashFlowTable">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Operating Activities</td>
+          <td id="operatingCashFlow"></td>
+        </tr>
+        <tr>
+          <td>Investing Activities</td>
+          <td id="investingCashFlow"></td>
+        </tr>
+        <tr>
+          <td>Financing Activities</td>
+          <td id="financingCashFlow"></td>
+        </tr>
+        <tr>
+          <td>Net Cash Flow</td>
+          <td id="netCashFlow"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+  function addInput(className) {
+    const inputContainer = document.getElementById('inputs');
+    const newInput = document.createElement('input');
+    newInput.type = 'number';
+    newInput.className = className;
+    newInput.placeholder = 'Enter amount';
+    const addButton = document.querySelector(`.${className} + button`);
+    inputContainer.insertBefore(newInput, addButton);
+  }
+
+  function calculateCashFlow() {
+    const incomeInputs = document.querySelectorAll('.incomeInput');
+    const expensesInputs = document.querySelectorAll('.expensesInput');
+    const investmentsInputs = document.querySelectorAll('.investmentsInput');
+    const financingInputs = document.querySelectorAll('.financingInput');
+
+    let totalIncome = 0;
+    incomeInputs.forEach(input => {
+      totalIncome += parseFloat(input.value) || 0;
+    });
+
+    let totalExpenses = 0;
+    expensesInputs.forEach(input => {
+      totalExpenses += parseFloat(input.value) || 0;
+    });
+
+    let totalInvestments = 0;
+    investmentsInputs.forEach(input => {
+      totalInvestments += parseFloat(input.value) || 0;
+    });
+
+    let totalFinancing = 0;
+    financingInputs.forEach(input => {
+      totalFinancing += parseFloat(input.value) || 0;
+    });
+
+    const operatingCashFlow = totalIncome - totalExpenses;
+    const investingCashFlow = totalInvestments;
+    const financingCashFlow = totalFinancing;
+    const netCashFlow = operatingCashFlow + investingCashFlow + financingCashFlow;
+
+    document.getElementById('operatingCashFlow').textContent = operatingCashFlow.toFixed(2);
+    document.getElementById('investingCashFlow').textContent = investingCashFlow.toFixed(2);
+    document.getElementById('financingCashFlow').textContent = financingCashFlow.toFixed(2);
+    document.getElementById('netCashFlow').textContent = netCashFlow.toFixed(2);
+  }
+</script>
+
+</body>
+</html>

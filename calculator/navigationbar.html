@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Money Man: Expense Tracker</title>
+    <meta property="og:title" content="Official Intent Baboon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style>
+      /* Navigation Bar */
+      nav {
+        background-color: #0a0e75;
+        overflow: hidden;
+        padding: 10px 0;
+      }
+
+      nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+
+      nav ul li {
+        display: inline-block;
+        margin-right: 10px;
+      }
+
+      nav ul li:last-child {
+        margin-right: 0;
+      }
+
+      nav ul li a {
+        display: block;
+        padding: 15px 30px;
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+        transition: all 0.3s ease;
+      }
+
+      nav ul li a:hover {
+        background-color: #628f27;
+      }
+
+      /* Submenu */
+      nav ul ul {
+        display: none;
+        position: absolute;
+        background-color: #45750a;
+        min-width: 200px;
+        z-index: 1;
+      }
+
+      nav ul li:hover > ul {
+        display: block;
+      }
+
+      nav ul ul li {
+        display: block;
+        margin: 0;
+      }
+
+      nav ul ul li a {
+        padding: 10px 20px;
+      }
+
+      nav ul ul li a:hover {
+        background-color: #628f27;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="Home.html">Home</a></li>
+        <li>
+          <a href="#">About</a>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Mission</a></li>
+            <li><a href="#">Vision</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Services</a>
+          <ul>
+            <li><a href="#">Financial Planning</a></li>
+            <li><a href="#">Investment Management</a></li>
+            <li><a href="#">Tax Services</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Contact</a>
+          <ul>
+            <li><a href="#">Contact Information</a></li>
+            <li><a href="#">Send Message</a></li>
+          </ul>
+        </li>
+        <!-- Additional options -->
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+    </nav>
+
+    <!-- Your website content goes here -->
+  </body>
+</html>
